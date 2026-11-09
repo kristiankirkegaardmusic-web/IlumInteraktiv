@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Et værk til atriet i Illum — Kristian Kirkegaard</title>
+  <meta name="description" content="Prototype på et interaktivt værk til atriet i Illum, af Kristian Kirkegaard.">
+  <meta name="theme-color" content="#000000">
+  <!-- Siden er et forslag, der sendes direkte til Illum, så den skal ikke findes via søgemaskiner. -->
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Link-forhåndsvisning. og:image skal være en fuld URL: ret repo-navnet, hvis siden ligger et andet sted. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:title" content="Et værk til atriet i Illum">
+  <meta property="og:description" content="Prototype på et interaktivt værk til atriet i Illum.">
+  <meta property="og:image" content="https://kristiankirkegaardmusic-web.github.io/IllumInteraktivtKoncept/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Crect x='15' y='4' width='2' height='24' fill='%23c4a46b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <span>Kristian Kirkegaard</span>
+    <a href="mailto:shapirosonic@gmail.com?subject=Illum%20%E2%80%93%20interaktivt%20v%C3%A6rk">Kontakt</a>
+  </header>
+
+  <main>
+    <!-- Forsidevideo: et lydløst loop. HEVC giver fuld kvalitet i små filer; H.264-filen er reserve til browsere
+         uden HEVC. Billedet er filmens første billede. -->
+    <section class="hero" data-hero aria-label="Video af værket">
+      <img class="hero__poster" src="assets/hero-poster-1024.jpg" srcset="assets/hero-poster-640.jpg 640w, assets/hero-poster-1024.jpg 1024w" sizes="(max-width: 699px) 100vw, 60vw" width="1024" height="1280" alt="Illums atrium tegnet i tusindvis af fine lystråde, der opløses om en person og samler sig igen." fetchpriority="high">
+      <video muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="assets/hero.mp4" type='video/mp4; codecs="hvc1.1.6.H120.B0"'>
+        <source src="assets/hero-h264.mp4" type="video/mp4">
+      </video>
+      <button class="hero__play" type="button" hidden>
+        <span class="hero__play-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Afspil videoen</span>
+      </button>
+    </section>
+
+    <section class="intro wrap">
+      <h1>Et værk til atriet i&nbsp;Illum</h1>
+      <p>Det her er en prototype, jeg har bygget til jeres atrium. Rummet er tegnet op i tusindvis af tynde tråde af lys. Når man bevæger sig foran det, fletter trådene sig ud og bliver til fint støv, og når man står stille igen, samler det hele sig.</p>
+    </section>
+
+    <section class="demo wrap" aria-labelledby="demo-title">
+      <div class="demo__text">
+        <h2 id="demo-title">Prøvet af derhjemme</h2>
+        <p>Her står jeg foran et helt almindeligt webcam. Øverst er kameraet, og nederst er værket. Det reagerer med det samme, og det ser aldrig helt ens ud to gange.</p>
+      </div>
+      <figure class="demo__media" data-demo>
+        <video muted loop playsinline preload="none" poster="assets/demo-poster.jpg" width="800" height="1540" aria-label="Øverst en person foran kameraet, nederst værket i samme øjeblik.">
+          <source src="assets/demo.mp4" type='video/mp4; codecs="hvc1.1.6.H120.B0"'>
+          <source src="assets/demo-h264.mp4" type="video/mp4">
+        </video>
+      </figure>
+    </section>
+
+    <section class="pair" aria-label="Før og under bevægelse">
+      <figure>
+        <img src="assets/frames/hvile-1024.jpg" srcset="assets/frames/hvile-640.jpg 640w, assets/frames/hvile-1024.jpg 1024w" sizes="(max-width: 699px) 100vw, 50vw" width="1024" height="1280" loading="lazy" alt="Værket, når ingen er i rummet: atriet står helt og roligt.">
+        <figcaption>Når der ikke er nogen</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/frames/bevaegelse-1024.jpg" srcset="assets/frames/bevaegelse-640.jpg 640w, assets/frames/bevaegelse-1024.jpg 1024w" sizes="(max-width: 699px) 100vw, 50vw" width="1024" height="1280" loading="lazy" alt="Værket, når en person bevæger sig foran det: bygningen opløses i kroppens form.">
+        <figcaption>Når nogen bevæger sig foran</figcaption>
+      </figure>
+    </section>
+
+    <section class="reasons wrap">
+      <figure class="reasons__image">
+        <img src="assets/guld-udsnit.jpg" width="440" height="900" loading="lazy" alt="Udsnit af værket: glasloftets gyldne ribber og den gyldne midterakse.">
+      </figure>
+      <div class="reasons__text">
+        <p>Værket er lavet ud fra jeres eget atrium og holder sig til jeres farver, sort, hvid og guld. Guldet lyser kun der, hvor rummet selv er gyldent, i midteraksen og i ribberne under glasloftet.</p>
+        <p>Der er ikke noget at trykke på, og ingen behøver at få det forklaret. Man opdager det, når man går forbi. Jeg tror, det er den slags, folk bliver stående ved, prøver igen og filmer.</p>
+        <p>Det kræver ikke meget. En skærm, et kamera og en computer. Jeg tilpasser det til den skærm eller væg, der passer bedst til rummet, og det kan stå i en periode, følge en kampagne eller blive stående.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
